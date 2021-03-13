@@ -1,0 +1,20 @@
+Tema 1 - Introduccion
+Tema 2 - Interaccion con el DOM
+Tema 3 - Condicionales y listas
+Tema 4 - Proyecto (The monster slayer game)
+Tema 5 - Vue entre bambalinas
+Tema 6 - Introduccion a los componentes
+Tema 7 - Mejorando la configuracion de desarrollo y el flujo de trabajo
+Tema 8 - Comunicacion entre componentes
+Tema 9 - Profundizando en componentes
+Tema 10 - Proyecto (The learning resources app)
+Tema 11 - Formularios
+Tema 12 - Enviando peticiones HTTP
+Tema 13 - Routing (aplicaciones de verias paginas y SPA)
+Tema 14 - Animaciones
+Tema 15 - Vuex
+Tema 16 - Proyecto (Find a coach)
+Tema 17 - Autenticacion
+Tema 18 - Optimizacion y despliegue
+Tema 19 - Composition API
+Tema 20 -Reutilizando funcionalidad (mixins y custom composition)
