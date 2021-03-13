@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <input type="text" v-model="valorTexto">
+      
+    </section>
+  </body>
+  <script>
+    /*
+     * Prueba de reactividad en VUE
+     */
+    let prueba = Vue.createApp({
+      data(){
+        return {
+          valorTexto: 'Texto del boton'
+        };
+      }
+    });
+    prueba.mount('#app');
+  </script>
+</html>

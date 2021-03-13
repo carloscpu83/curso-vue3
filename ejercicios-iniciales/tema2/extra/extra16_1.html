@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <div>El numero random calculado es: {{calcularRandom()}}</div>
+      <input type="button" @click="mostrarMensaje()" value="Mostrar mensaje">
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      methods: {
+        calcularRandom: function (){
+          return Math.random();
+        },
+        mostrarMensaje: function (){
+          alert('Hola desde VUE');
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</html>

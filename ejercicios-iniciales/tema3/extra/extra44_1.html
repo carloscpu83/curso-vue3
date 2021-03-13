@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      Comida:
+      <ul>
+        <li v-for="(item, index) in lista1">{{item}} en posicion {{index}}</li>
+      </ul>
+      <br><br>
+      Personas:
+      <ul>
+        <li v-for="(valor, indice) in lista2">Nombre:{{valor.nombre}}     Apellido: {{valor.apellido}}    Indice:{{indice}}</li>
+      </ul>
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+          lista1: ['pera','pan','carne'],
+          lista2: [{nombre: 'carlos', apellido: 'carpintero'},{nombre: 'rocio', apellido: 'moreno'}]
+        };
+      }
+    });
+    app.mount('#app');
+  </script>
+</html>

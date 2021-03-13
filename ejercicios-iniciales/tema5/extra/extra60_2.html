@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+  </body>
+  <script>
+    /*
+     * Prueba de reactividad en VUE
+     */
+    let datos = {
+      mensajeCorto: 'corto',
+      mensajeLargo: 'largo'
+    };
+
+    let manejador = {
+      set(target, key, value){
+        if(key === 'mensajeLargo'){
+          console.log('Se ha cambiado el mensjae largo a:' + value);
+        }else{
+          console.log('Se ha detectado una cambio pero nada mas.');
+        }
+      }
+    }
+
+    let pr = new Proxy(datos,manejador);
+
+    pr.mensajeCorto = 'x';
+    pr.mensajeLargo = 'y';
+  </script>
+</html>

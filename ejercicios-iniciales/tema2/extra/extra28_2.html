@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <input type="text" v-model="operacion" /> La operacion es :
+      {{getOperacion}}
+      <br />
+      <input type="button" value="Incrementar" @click="sumar"> {{mostrarValor}}
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          operacion: "",
+          valor: 0
+        };
+      },
+      methods: {
+        sumar() {
+          this.valor++;
+        }
+      },
+      computed: {
+        getOperacion() {
+          console.log("Entrando en getOperacion");
+          if (this.operacion === "suma") {
+            return "SUMA";
+          } else if (this.operacion === "resta") {
+            return "RESTA";
+          } else {
+            return "No reconocida";
+          }
+        },
+        mostrarValor(){
+          console.log("Entrando en mostrarValor");
+          return 'El valor es: ' + this.valor;
+        }
+      }
+    });
+    app.mount("#app");
+  </script>
+</html>

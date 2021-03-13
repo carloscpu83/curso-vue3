@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <input type="text" v-model="entrada"><input type="button" @click="agregar" value="Agregar">
+      <br>
+      <ul>
+        <li v-for="(valor, index) in lista" @click="borrar(index)">{{valor}} en posicion {{index}}</li>
+      </ul>
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return {
+          entrada:"",
+          lista:[]
+        };
+      },
+      methods:{
+        agregar:function(){
+          if(this.entrada !== ''){
+            this.lista.push(this.entrada);
+          } else {
+            alert('Agregue un elemento');
+          }
+        },
+        borrar(idx){
+          this.lista.splice(idx, 1);
+        }
+      }
+    });
+    app.mount('#app');
+  </script>
+</html>

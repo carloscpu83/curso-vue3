@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <input type="text" v-model="elemento">
+      <input type="button" value="Agregar" @click="agregar">
+      <input type="button" value="Eliminar" @click="eliminar">
+      <p v-show="elementos.length === 0">No hay elementos</p>
+      <p v-show="elementos.length > 0">Hay elementos</p>
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return {
+          elementos: [],
+          elemento: ''
+        };
+      },
+      methods:{
+        agregar(){
+          if(this.elemento !== ''){
+            this.elementos.push(this.elemento);
+            this.elemento = "";
+          } else {
+            alert('No se ha insertado ningun elemento');
+          }
+        },
+        eliminar(){
+          this.elementos.pop();
+        }
+      }
+    });
+    app.mount('#app');
+  </script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <input type="button" @click="mostrarMensaje()" value="Ejecutar"/>
+      <span>El valor es: {{mensaje}}</span>
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data: function (){
+        return {
+          c1: '<= 0.5',
+          c2: '> 0.5',
+          mensaje: ''
+        }
+      },
+      methods:{
+        mostrarMensaje: function (){
+          let valor = Math.random();
+          if (valor <= 0.5){
+            this.mensaje = this.c1;
+          } else {
+            this.mensaje = this.c2;
+          }
+          //alert(this.mensaje);
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</html>

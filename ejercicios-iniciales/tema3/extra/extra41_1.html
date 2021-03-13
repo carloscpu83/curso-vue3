@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      {{cant}}
+      <input type="button" value="Incrementar" @click="cant++"/>
+      <input type="button" value="Decrementar" @click="cant--"/>
+      <br />
+      <h2>Elementos</h2>
+      <ul>
+        <li v-if="cant <= 0">Ninguno</li>
+        <li v-else-if="cant === 1">Uno</li>
+        <li v-else>Más de uno</li>
+      </ul>
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          cant: 0
+        };
+      }
+    });
+    app.mount('#app');
+  </script>
+</html>

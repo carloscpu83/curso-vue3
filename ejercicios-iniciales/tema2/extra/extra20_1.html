@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <h1>El valor actual es: {{valor}}</h1>
+      <input type="button" value="Incrementar" @click="incrementar()" />
+      <input type="button" value="Decrementar" @click="decrementar()" />
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          valor: 0,
+        };
+      },
+      methods: {
+        incrementar: function () {
+          this.valor++;
+        },
+        decrementar: function () {
+          this.valor--;
+        },
+      },
+    });
+
+    app.mount("#app");
+  </script>
+</html>

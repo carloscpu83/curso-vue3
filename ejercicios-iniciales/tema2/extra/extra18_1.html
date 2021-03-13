@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <div v-html="txtPlano"></div>
+      <div v-html="mi_funcion()"></div>
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data: function (){
+        return {
+          txtPlano: '<h1>Mi texto plano</h1>',
+          txtFunc: 'Mi texto en función'
+        }
+      },
+      methods: {
+        mi_funcion: function (){
+          return '<h1>' + this.txtFunc + '</h1>';
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</html>

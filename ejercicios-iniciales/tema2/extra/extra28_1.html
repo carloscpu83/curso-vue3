@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <div>{{concatenar()}}</div>
+      <input type="text" v-model="valor">
+      <hr>
+      <div>{{numero}} <input type="button" @click="ejecutar()" value="Ejecutar" /></div>
+    </section>
+  </body>
+  <script>
+    /*
+     * Prueba que demuestra que si llamamos a varias funciones y en las dobles llaves hay funciones
+     * no sabe que debe actualizar y por tanto actualiza todo. (Ejemplo al pinchar en el boton)
+     */
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          valor: "hola",
+          numero: 5
+        };
+      },
+      methods: {
+        concatenar: function () {
+          console.log('CONCATENACION');
+          return this.valor + ' ' + 'CARLOS';
+        },
+        ejecutar: function () {
+          console.log('EJECUCION');
+          this.numero += 5;
+        }
+      },
+    });
+    app.mount("#app");
+  </script>
+</html>

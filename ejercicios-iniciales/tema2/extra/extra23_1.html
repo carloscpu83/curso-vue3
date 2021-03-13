@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      Sin parametros: <input type="text" @input="funcionSinPrametro"><br>
+      Con parametros: <input type="text" @input="funcionConParametro($event,'Llamada desde la funcion con parametros con valor: ')">
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data: function (){
+
+      },
+      methods: {
+        funcionSinPrametro: function (){
+          alert('Llamada desde la funcion sin parametros con valor : ' + event.target.value);
+        },
+        funcionConParametro: function (event, txt){
+          alert(txt + event.target.value);
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</html>

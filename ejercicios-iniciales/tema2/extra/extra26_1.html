@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla base</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla base de VUE</h1>
+    </header>
+    <section id="app">
+      <input type="text" v-model="valor" @input="comprobar()">{{info}}<br>
+      <!-- PRUEBA 2-->
+      <input type="text" v-bind:value="valor2" @input="comprobar2()">{{info2}}
+    </section>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data: function(){
+        return {
+          valor: '',
+          info : '',
+          valor2: '',
+          info2 : ''
+        };
+      },
+      methods: {
+        comprobar: function(){
+          if(this.valor === 'carlos'){
+            this.info = 'Es carlos...';
+          }else{
+            this.info ='Persona desconocida...';
+          }
+        },
+        comprobar2: function(){
+          this.valor2 = event.target.value;
+          if(this.valor2 === 'carlos'){
+            this.info2 = 'Es carlos...';
+          }else{
+            this.info2 ='Persona desconocida...';
+          }
+        }
+      }
+    });
+    app.mount('#app');
+  </script>
+</html>
