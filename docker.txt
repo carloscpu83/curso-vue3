@@ -1,0 +1,1 @@
+docker container run -it -d --name node -v /home/carlos/Escritorio/volumenes/node/:/usr/src/app -p 80:8080  node:10-buster-slim
